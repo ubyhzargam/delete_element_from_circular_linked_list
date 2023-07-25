@@ -41,7 +41,7 @@ void display(int n)
 int Del(int pos,int n)
 {
     int x;
-    if(pos<1&&pos>n)
+    if(pos<1||pos>n)
         return -1;
     struct Node *q,*p;
     p=head;
@@ -89,8 +89,8 @@ int main()
     x=Del(pos,x);
     if(x<0)
         cout<<"The given index is invalid "<<endl;
-    else
+    else{
         cout<<"The element "<<x<<" was deleted from the linked list and the updated linked list is given by : "<<endl;
-    display(n-1);
+        display(n-1);}
     return 0;
 }
